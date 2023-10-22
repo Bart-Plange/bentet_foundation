@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Mobile Money Payment</title>
+    
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 p-4 text-white">
+        <h1 class="text-2xl font-semibold text-center ">Mobile Money Payment</h1>
+    </header>
+    <main class="container mx-auto mt-6">
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-semibold mb-4 text-center text-orange-500">Make a Mobile Money Payment</h2>
+        <div class="text-center font-semibold text-xl mb-4">
+            Donation Amount: <span id=donationAmount></span>
+        </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label for="network" class="block text-gray-600">Mobile Money Network</label>
+                    <select id="network" name="network" required
+                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500">
+                        <option value="mtn">MTN</option>
+                        <option value="vodafone">Vodafone</option>
+                        <option value="airteltigo">AirtelTigo</option>
+                        <option value="glo">Glo</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="phone-number" class="block text-gray-600">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone-number" required
+                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500" placeholder="024 000 0000">
+                </div>
+                <div>
+                    <label for="transaction-reference" class="block text-gray-600">Transaction Reference</label>
+                    <input type="text" id="transaction-reference" name="transaction-reference" required
+                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500" placeholder="educatinoal support">
+                </div>
+                <div class="text-center">
+                    <button type="submit" id="submit-button"
+                        class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-orange-700">Submit
+                        Payment</button>
+
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-gray-800 p-4 text-white text-center">
+        <p>&copy; 2023 Bentet Foundation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to show loading overlay
+        function showLoadingOverlay() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
+            loadingOverlay.innerHTML = `
+                    <div class="loading-text">
+                        <div class="loading-spinner"></div>
+                        <p>Processing Payment...</p>
+                    </div>
+                `;
+            document.body.appendChild(loadingOverlay);
+
+            setTimeout(() => {
+                loadingOverlay.innerHTML = `
+                        <div class="loading-text">
+                            <p>Payment Processed!</p>
+                        </div>
+                    `;
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                    const thankYouMessage = document.createElement('div');
+                    thankYouMessage.className = 'thank-you-message';
+                    thankYouMessage.innerHTML = `
+                            <p>Thank you for your donation!</p>
+                        `;
+                    document.body.appendChild(thankYouMessage);
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html'; // Replace 'index.html' with your home page URL
+                    }, 3000); // 3000 milliseconds (3 seconds) delay
+                }, 5000); // 5000 milliseconds (5 seconds) delay
+            }, 3000); // 3000 milliseconds (3 seconds) delay
+        }
+
+        // Attach the function to the form submit button
+        const submitButton = document.querySelector('#submit-button');
+        submitButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            showLoadingOverlay();
+        });
+
+
+        // Retrieve the donation amount and currency from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const amount = urlParams.get('amount');
+            const currency = urlParams.get('currency');
+
+            console.log('Amount:', amount);
+            console.log('Currency:', currency);
+
+            // Display the donation amount and currency on the page
+            if (amount && currency) {
+                document.getElementById('donationAmount').textContent = `${amount} ${currency}`;
+            }
+    </script>
+</body>
+
+</html>

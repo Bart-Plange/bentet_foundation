@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Select Payment Method</title>
+</head>
+
+<body class="bg-gray-100 flex flex-col justify-center min-h-screen">
+    <header class="bg-blue-500 p-4 text-white">
+        <h1 class="text-2xl font-semibold text-center">Select Payment Method</h1>
+    </header>
+    <main class="container mx-auto mt-6 flex-grow">
+        <section class="bg-white p-6 rounded shadow max-w-lg mx-auto">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Choose Your Payment Method</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <a href="bank_payment.html?amount=${donationAmount}&currency=${currency}"
+                    class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center">Bank Transfer</a>
+                </div>
+                <div>
+                    <a href="paypal_payment.html?amount=${donationAmount}&currency=${currency}"
+                        class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center">PayPal</a>
+                </div>
+
+                <div>
+                    <a href="mobile_money_payment.html?amount=${donationAmount}&currency=${currency}"
+                        class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center">Mobile Money</a>
+
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 p-4 text-white text-center">
+        <p>&copy; 2023 Bentet Foundation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve the 'amount' and 'currency' from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const amount = urlParams.get('amount');
+            const currency = urlParams.get('currency');
+
+            // Update the links to include the actual values
+            document.querySelector("a[href='bank_payment.html']").href = `bank_payment.html?amount=${amount}&currency=${currency}`;
+            document.querySelector("a[href='paypal_payment.html']").href = `paypal_payment.html?amount=${amount}&currency=${currency}`;
+            document.querySelector("a[href='mobile_money_payment.html']").href = `mobile_money_payment.html?amount=${amount}&currency=${currency}`;
+
+
+    </script>
+</body>
+
+</html>

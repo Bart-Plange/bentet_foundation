@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Registration</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 p-4 text-white">
+        <h1 class="text-2xl font-semibold text-center">User Registration</h1>
+    </header>
+    <main class="container mx-auto mt-6">
+        <section class="bg-gray-200 p-6 rounded shadow lg:w-2/3">
+            <h2 class="text-2xl font-semibold mb-4">Create an Account</h2>
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="md:col-span-1">
+                        <label for="full-name" class="block text-gray-600">Full Name</label>
+                        <input type="text" id="full-name" name="full-name"
+                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                            autocomplete="no" placeholder="Enter name here" required>
+                    </div>
+                    <div class="md:col-span-1">
+                        <label for="email" class="block text-gray-600">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                            autocomplete="no" placeholder="info@bentet.org" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="md:col-span-1">
+                        <label for="password" class="block text-gray-600">Password</label>
+                        <input type="password" id="password" name="password" required
+                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                            autocomplete="no" placeholder="**************" required>
+                    </div>
+                    <div class="md:col-span-1">
+                        <label for="company" class="block text-gray-600">Company or Institution</label>
+                        <input type="text" id="company" name="company"
+                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                            autocomplete="no" placeholder="Are you part of a company?" required>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <label for="role" class="block text-gray-600">Role</label>
+                    <input type="text" id="role" name="role"
+                        class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                        autocomplete="no" placeholder="Administrator or CEO, etc" required>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="flex items-center">
+                        <input type="radio" id="consent-yes" name="consent" value="yes" required>
+                        <label for="consent-yes" class="ml-2 block text-gray-600">Yes, I agree to the terms and
+                            conditions</label>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="flex items-center">
+                        <input type="radio" id="newsletter-yes" name="newsletter" value="yes" required>
+                        <label for="newsletter-yes" class="ml-2 block text-gray-600">Receive Updates on
+                            Newsletter</label>
+                    </div>
+                </div>
+                <div class="md:col-span-2 flex justify-center">
+                    <button type="submit"
+                        class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border-white rounded focus:outline-none focus:shadow-outline">Register</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center md:flex justify-between">
+            <p>&copy; 2023 Bentet Foundation. All rights reserved.</p>
+            <p>Project by: Tetteh Ebenezer</p>
+        </div>
+    </footer>
+</body>
+
+</html>

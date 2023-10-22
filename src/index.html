@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Bentet Foundation</title>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-cover bg-no-repeat bg-center h-screen" style="background-image: url('./assets/images/d.jpeg');">
+
+        <!-- Header -->
+        <header class="p-4 backdrop-blur-2xl text-white py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-semibold">Bentet Foundation</h1>
+                <nav class="hidden md:flex space-x-6">
+                    <ul class="flex space-x-6">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#humanitarian-needs">Humanitarian Needs</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="donation.html">Donate</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <!-- Hamburger menu icon -->
+                    <button id="mobile-menu-button" class="text-2xl text-white">
+                        <!-- menu image -->
+                        <img src="./assets/images/menu.svg" alt="">
+                    </button>
+                    <!-- Close button (initially hidden) -->
+                    <button id="mobile-close-button" class="text-2xl text-white hidden">
+                        <!-- close image -->
+                        <img src="./assets/images/close.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        
+            <div id="mobile-menu" class="md:hidden">
+                <ul id="mobile-menu-list" class="hidden space-y-4">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#humanitarian-needs">Humanitarian Needs</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                </ul>
+            </div>
+        </header>
+
+    
+    
+        <!-- Hero Section -->
+        <section class="p-4 bg-cover bg-no-repeat bg-center h-screen">
+            <div class="container mx-auto h-full flex items-center">
+                <div class="text-white">
+                    <h2 class="lg:text-8xl font-extrabold lg:w-2/3 text-6xl">Our Aims and Motives</h2>
+                    <p class="text-xl mt-4 text-blue-300">Helping those in need through our foundation.</p>
+                    <div class="pt-12 flex gap-12">
+                        <a href="#about" class="border p-2 bg-orange-600 font-bold hover:bg-transparent rounded">Learn More</a>
+                        <a href="contact.html" class="p-2 font-bold border hover:bg-orange-600 transition-all rounded">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- About Section -->
+    <section id="about" class="lg:py-16">
+        <div class="Container mx-auto flex flex-col md:flex-row lg:items-center items-start lg:space-y-6 md:space-y-0 p-2">
+            <div class="md:w-1/3">
+                <p class="text-orange-500 text-3xl font-bold md:mt-16 md:pt-16">What You Have to Know about Bentet Foundation</p>
+            </div>
+            <!-- Add the separating bar here -->
+            <div class="md:w-2/3 relative mt-4 lg:mt-0">
+                <div class="hidden md:flex separator-bar"></div>
+                <p class="text-lg md:ml-8">
+                    The Bentet Foundation Aid, established several years ago, is a non-profit, non-partisan organization
+                    based in
+                    Ghana. Our primary mission is to promote and support education, with a special emphasis on children. We
+                    are
+                    dedicated to offering educational opportunities to children from diverse ethnic backgrounds and races.
+                </p>
+    
+                <p class="text-lg mt-4 md:ml-8">
+                    Furthermore, our foundation concentrates its efforts on two main areas. Firstly, we are committed to
+                    providing
+                    essential food aid to underprivileged families. Secondly, we extend support by covering school fees for
+                    those in
+                    need.
+                </p>
+    
+                <p class="text-lg mt-4 md:ml-8">
+                    Our ultimate goal is to make a positive impact on the lives of children facing adversity, including
+                    those from
+                    broken homes, school dropouts, and children who may have lost hope for a brighter future. We aspire to
+                    guide them
+                    towards a place filled with hope and opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-cover bg-center bg-no-repeat h-4/5 relative"
+        style="background-image: url('./assets/images/f.webp');">
+        <div class="Container mx-auto h-screen flex flex-col justify-center items-center p-4 lg:p-0">
+            <p class="text-white text-4xl lg:text-5xl mb-6 lg:w-2/3 font-bold">Your contribution can make a difference. Join us in making the world a better
+                place.</p>
+                <p class="text-blue-400 lg:w-2/3 text-xl">The life of a family and someone somewhere matter, every bit of it is a blessing. To make someone happy is the greatest
+                priority of life.</p>
+            <div class="pt-12 flex gap-12">
+                <a href="register.html" class="border p-2 text-white bg-orange-600 font-bold hover:bg-transparent rounded">Register Now</a>
+                <a href="contact.html" class="p-2 font-bold border hover:bg-orange-600 transition-all text-white rounded">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Humanitarian Needs Section -->
+    <section id="humanitarian-needs" class="bg-gray-200 lg:py-16 py-8">
+        <div class="Container mx-auto p-4">
+            <h2 class="text-5xl font-semibold text-center text-orange-500">Humanitarian Needs</h2>
+            <p class="text-lg text-center mt-4 text-gray-500">A Highlight of the Humanitarian Needs Addressed by the Foundation</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                <!-- Card 1 -->
+                <div class="bg-orange-500 rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Education Support</h3>
+                    <p class="text-blue-100">Providing school supplies and scholarships to underprivileged children.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Food Aid</h3>
+                    <p class="text-gray-600">Distributing food to families in need to combat hunger and malnutrition.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-orange-500 rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Medical Assistance</h3>
+                    <p class="text-gray-600">Providing medical care and medications to the sick and vulnerable.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2">Shelter Support</h3>
+                    <p class="text-gray-600">Offering shelter, clothing, and housing assistance to the homeless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Login / Register Section -->
+<section id="login" class="py-16">
+    <div class="Container mx-auto p-4">
+        <div>
+            <h2 class="text-5xl mb-6 text-orange-500 font-bold">Why Register with Us?</h2>
+            <div class="md:flex justify-between ">
+                <ul class=" text-lg text-start pt-12">
+                    <li class="mb-4">Join a community dedicated to making the world a better place.</li>
+                    <li class="mb-4 text-blue-500">Get updates on our humanitarian efforts and impact.</li>
+                </ul>
+    
+                <!-- horizontal bar -->
+                <div class="hidden md:block border-r border-blue-500 h-64 " style="margin-right: 20px;"></div>
+    
+                <ul class="text-lg text-start pt-12">
+                    <li class="mb-4 text-blue-500">Participate in donation drives and volunteer opportunities.</li>
+                    <li class="mb-4 ">Connect with like-minded individuals and organizations.</li>
+                </ul>
+            </div>
+        </div>
+        <a href="register.html"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register
+            Now</a>
+    </div>
+</section>
+
+
+<!-- Activities Section with Swiper Container -->
+<section id="activities" class="py-16">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-center">Our Activities</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold mb-2">Activity 1</h3>
+                        <p class="text-gray-600">Description of activity 1.</p>
+                        <a href="#"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-semibold mb-2">Activity 2</h3>
+                        <p class="text-gray-600">Description of activity 2.</p>
+                        <a href="#"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read
+                            More</a>
+                    </div>
+                </div>
+
+                <!-- Add more slides as needed -->
+            </div>
+        </div>
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+    <!-- Donate Section -->
+    <section class="bg-cover bg-center bg-no-repeat h-full relative"
+        style="background-image: url('./assets/images/e.png'); 
+        background-position: center;
+        ">
+        <div class="container mx-auto h-screen flex flex-col justify-center items-center pt-8 lg:pt-0 p-4 lg:p-0">
+            <h2 class="lg:text-6xl text-4xl font-bold lg:text-white text-orange-500 mb-4 pt-8 lg:pt-0">Support Our Cause</h2>
+            <p class="text-white text-2xl mb-6 lg:w-2/3 mt-4">Your financial contribution and donations makes an impact and a difference. Join us in making the world a better
+                place.</p>
+            <div class="flex space-x-4">
+                <a href="donation.html"
+                    class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border rounded focus:outline-none focus:shadow-outline">Donate Now</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- newsletter -->
+
+    <section id="newsletter" class="bg-gray-200 py-12 p-4 lg:p-0">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-6">Subscribe to Our Newsletter</h2>
+            <form class="flex flex-col items-center">
+                <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your Email"
+                    class="w-full md:w-2/3 px-4 py-2 border rounded focus:outline-none focus:border-orange-500 border-blue-500 mb-4"
+                    required>
+                <button type="submit"
+                    class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border rounded focus:outline-none focus:shadow-outline">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center md:flex justify-between">
+            <p>&copy; 2023 Bentet Foundation. All rights reserved.</p>
+            <p>Project by: Tetteh Ebenezer</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "15fa81ae6ccaf07fbc6290c9b746391b0", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+
+</body>
+
+</html>
