@@ -36,8 +36,58 @@
                 </button>
                 <a href="register.html" class="text-blue-500 hover:underline">Don't have an acoount yet? Register</a>
             </div>
+
+            <div class="login-message"></div>
+
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to handle login form submission
+        async function loginUser() {
+            // Get form input values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Create a data object with the form data
+            const data = {
+                email,
+                password,
+            };
+
+            try {
+                // Send a POST request to your login endpoint
+                const response = await axios.post('http://localhost:3000/api/login', data);
+
+                // Handle the login success response here (e.g., redirect to a dashboard)
+                console.log(response.data);
+
+                // Display success message to the user
+                const loginMessage = document.querySelector('.login-message');
+                loginMessage.innerHTML = 'Login successful. Redirecting...'; // You can customize this message.
+
+                 // Redirect to index.html after a successful login
+                window.location.href = 'index.html';
+                
+            } catch (error) {
+                // Handle login error (e.g., show an error message)
+                console.error(error);
+
+                // Display error message to the user
+                const loginMessage = document.querySelector('.login-message');
+                loginMessage.innerHTML = 'Login failed. Please check your credentials.'; // Customize this error message.
+            }
+        }
+
+        // Add an event listener to the login form
+        const loginForm = document.querySelector('form');
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            loginUser(); // Call the loginUser function to submit the form
+        });
+    </script>
+
 </body>
 
 </html>

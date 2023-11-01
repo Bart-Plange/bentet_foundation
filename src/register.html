@@ -5,71 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
-    <title>Registration</title>
+    <title>Registration - Bentet Foundation</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body class="bg-gray-100">
-    <header class="bg-blue-500 p-4 text-white">
-        <h1 class="text-2xl font-semibold text-center">User Registration</h1>
+    <header class="p-4 text-white py-4 bg-gray-400">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">
+                <a href="index.html">Bentet Foundation</a></h1>
+            <nav class="hidden md:flex space-x-6">
+                <ul class="flex space-x-6">
+                    <li class="hover:underline hover:rounded-lg"><a href="index.html#about">About Us</a></li>
+                    <li class="hover:underline hover:rounded-lg"><a href="index.html#humanitarian-needs">Humanitarian Needs</a></li>
+                    <li class="hover:underline hover:rounded-lg"><a href="register.html">Register</a></li>
+                    <li class="hover:underline hover:rounded-lg"><a href="donation.html">Donate</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <!-- Hamburger menu icon -->
+                <button id="mobile-menu-button" class="text-2xl text-white">
+                    <!-- menu image -->
+                    <img src="./assets/images/menu.svg" alt="">
+                </button>
+                <!-- Close button (initially hidden) -->
+                <button id="mobile-close-button" class="text-2xl text-white hidden">
+                    <!-- close image -->
+                    <img src="./assets/images/close.svg" alt="">
+                </button>
+            </div>
+        </div>
+    
+        <div id="mobile-menu" class="md:hidden">
+            <ul id="mobile-menu-list" class="hidden space-y-4">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#humanitarian-needs">Humanitarian Needs</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="donation.html">Donate</a></li>
+            </ul>
+        </div>
     </header>
-    <main class="container mx-auto mt-6">
-        <section class="bg-gray-200 p-6 rounded shadow lg:w-2/3">
-            <h2 class="text-2xl font-semibold mb-4">Create an Account</h2>
-            <form class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="md:col-span-1">
-                        <label for="full-name" class="block text-gray-600">Full Name</label>
-                        <input type="text" id="full-name" name="full-name"
+
+    <main class="Container mx-auto mt-6">
+        <section class="bg-gray-200 p-6 rounded shadow lg:flex lg:space-x-5">
+            <div class="lg:w-2/3">
+                <h2 class="text-2xl font-semibold mb-4 text-orange-500">Create an Account</h2>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-1">
+                            <label for="full-name" class="block text-gray-600">Full Name</label>
+                            <input type="text" id="full-name" name="fullName"
+                                class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                                autocomplete="no" placeholder="Enter name here" required>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label for="email" class="block text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                                autocomplete="no" placeholder="info@bentet.org" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-1">
+                            <label for="password" class="block text-gray-600">Password</label>
+                            <input type="password" id="password" name="password" required
+                                class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                                autocomplete="no" placeholder="**************" required>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label for="company" class="block text-gray-600">Company or Institution</label>
+                            <input type="text" id="company" name="company"
+                                class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
+                                autocomplete="no" placeholder="Are you part of a company?" required>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="role" class="block text-gray-600">Role</label>
+                        <input type="text" id="role" name="role"
                             class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
-                            autocomplete="no" placeholder="Enter name here" required>
+                            autocomplete="no" placeholder="Administrator or CEO, etc" required>
                     </div>
-                    <div class="md:col-span-1">
-                        <label for="email" class="block text-gray-600">Email</label>
-                        <input type="email" id="email" name="email"
-                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
-                            autocomplete="no" placeholder="info@bentet.org" required>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center">
+                            <input type="radio" id="consent-yes" name="consent" value="yes" required>
+                            <label for="consent-yes" class="ml-2 block text-gray-600">Yes, I agree to the terms and
+                                conditions</label>
+                        </div>
                     </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="md:col-span-1">
-                        <label for="password" class="block text-gray-600">Password</label>
-                        <input type="password" id="password" name="password" required
-                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
-                            autocomplete="no" placeholder="**************" required>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center">
+                            <input type="radio" id="newsletter-yes" name="newsletter" value="yes" required>
+                            <label for="newsletter-yes" class="ml-2 block text-gray-600">Receive Updates on
+                                Newsletter</label>
+                        </div>
                     </div>
-                    <div class="md:col-span-1">
-                        <label for="company" class="block text-gray-600">Company or Institution</label>
-                        <input type="text" id="company" name="company"
-                            class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
-                            autocomplete="no" placeholder="Are you part of a company?" required>
+                    <div class="md:col-span-2 flex justify-center">
+                        <button type="submit"
+                            class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border-white rounded focus:outline-none focus:shadow-outline">Register</button>
                     </div>
-                </div>
-                <div class="md:col-span-2">
-                    <label for="role" class="block text-gray-600">Role</label>
-                    <input type="text" id="role" name="role"
-                        class="p-2 w-full bg-transparent border-gray-800 border-b focus:outline-none focus:border-b-orange-600"
-                        autocomplete="no" placeholder="Administrator or CEO, etc" required>
-                </div>
-                <div class="md:col-span-2">
-                    <div class="flex items-center">
-                        <input type="radio" id="consent-yes" name="consent" value="yes" required>
-                        <label for="consent-yes" class="ml-2 block text-gray-600">Yes, I agree to the terms and
-                            conditions</label>
+                    <div>
+                        <a href="login.html" class="text-gray-500 hover:text-blue-500">Already registered? login here</a>
                     </div>
-                </div>
-                <div class="md:col-span-2">
-                    <div class="flex items-center">
-                        <input type="radio" id="newsletter-yes" name="newsletter" value="yes" required>
-                        <label for="newsletter-yes" class="ml-2 block text-gray-600">Receive Updates on
-                            Newsletter</label>
-                    </div>
-                </div>
-                <div class="md:col-span-2 flex justify-center">
-                    <button type="submit"
-                        class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border-white rounded focus:outline-none focus:shadow-outline">Register</button>
-                </div>
-            </form>
+    
+                    <div class="registration-message"></div>
+    
+                </form>
+            </div>
+
+            <div class="lg:w-1/3">
+                <h3 class="text-2xl font-semibold mb-4 text-orange-500">Benefits of Belonging to Bentet Foundation</h3>
+                <ul class="list-disc pl-6">
+                    <li>Active participation in humanitarian projects</li>
+                    <li>Networking with like-minded individuals and organizations</li>
+                    <li>Access to exclusive events and workshops</li>
+                    <li>Engage in meaningful volunteer opportunities</li>
+                    <li>Receive recognition and awards for contributions</li>
+                    <li>Access valuable humanitarian resources</li>
+                    <li>Personal growth and development</li>
+                    <li>Contribute to a global impact on critical needs</li>
+                </ul>
+            </div>
         </section>
+
+
     </main>
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
@@ -78,6 +137,87 @@
             <p>Project by: Tetteh Ebenezer</p>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "24b129394b3d9c1415d39694a283c55a1", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to handle registration form submission
+        async function registerUser() {
+            // Get form input values
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const company = document.getElementById('company').value;
+            const role = document.getElementById('role').value;
+            const consent = document.querySelector('input[name="consent"]:checked').value;
+            const newsletter = document.querySelector('input[name="newsletter"]:checked').value;
+
+            // Create a data object with the form data
+            const data = {
+                fullName,
+                email,
+                password,
+                company,
+                role,
+                consent,
+                newsletter,
+            };
+
+            try {
+                // Send a POST request to your registration endpoint
+                const response = await axios.post('http://localhost:3000/api/register', data);
+                // Handle the registration success response here (e.g., show a success message)
+                console.log(response.data);
+
+                // Display success message to the user
+                const registrationMessage = document.querySelector('.registration-message');
+                registrationMessage.innerHTML = 'Registration successful. Check your email for confirmation.';
+                registrationMessage.classList.add('success'); // Add a success class
+
+                // Clear the registration form fields
+                document.getElementById('full-name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+                document.getElementById('company').value = '';
+                document.getElementById('role').value = '';
+                document.querySelector('input[name="consent"]:checked').checked = false;
+                document.querySelector('input[name="newsletter"]:checked').checked = false;
+
+                // Redirect to login.html after a successful registration
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 3000); // Redirect after a delay (3 seconds)
+            } catch (error) {
+                // Handle registration error (e.g., show an error message)
+                console.error(error);
+
+                // Display error message to the user
+                const registrationMessage = document.querySelector('.registration-message');
+                registrationMessage.innerHTML = 'Registration failed. Please try again later.';
+                registrationMessage.classList.add('error'); // Add an error class
+            }
+        }
+
+        // Add an event listener to the registration form
+        const registrationForm = document.querySelector('form');
+        registrationForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            registerUser(); // Call the registerUser function to submit the form
+        });
+    </script>
+   
+    
 </body>
 
 </html>

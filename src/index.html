@@ -15,13 +15,14 @@
         <!-- Header -->
         <header class="p-4 backdrop-blur-2xl text-white py-4">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-2xl font-semibold">Bentet Foundation</h1>
+                <h1 class="text-2xl font-semibold">
+                    <a href="index.html">Bentet Foundation</a></h1>
                 <nav class="hidden md:flex space-x-6">
                     <ul class="flex space-x-6">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#humanitarian-needs">Humanitarian Needs</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="donation.html">Donate</a></li>
+                        <li class="hover:underline"><a href="#about">About Us</a></li>
+                        <li class="hover:underline"><a href="#humanitarian-needs">Humanitarian Needs</a></li>
+                        <li class="hover:underline"><a href="register.html">Register</a></li>
+                        <li class="hover:underline"><a href="donation.html">Donate</a></li>
                     </ul>
                 </nav>
                 <div class="md:hidden">
@@ -54,8 +55,8 @@
         <section class="p-4 bg-cover bg-no-repeat bg-center h-screen">
             <div class="container mx-auto h-full flex items-center">
                 <div class="text-white">
-                    <h2 class="lg:text-8xl font-extrabold lg:w-2/3 text-6xl">Our Aims and Motives</h2>
-                    <p class="text-xl mt-4 text-blue-300">Helping those in need through our foundation.</p>
+                    <h2 class="lg:text-8xl font-extrabold lg:w-2/3 text-6xl">the Ben Tet Foundation</h2>
+                    <p class="text-xl mt-4 text-black">Helping those in need through our foundation.</p>
                     <div class="pt-12 flex gap-12">
                         <a href="#about" class="border p-2 bg-orange-600 font-bold hover:bg-transparent rounded">Learn More</a>
                         <a href="contact.html" class="p-2 font-bold border hover:bg-orange-600 transition-all rounded">Contact us</a>
@@ -67,8 +68,9 @@
 
 
     <!-- About Section -->
-    <section id="about" class="lg:py-16">
+    <section id="about" class="lg:py-10">
         <div class="Container mx-auto flex flex-col md:flex-row lg:items-center items-start lg:space-y-6 md:space-y-0 p-2">
+            
             <div class="md:w-1/3">
                 <p class="text-orange-500 text-3xl font-bold md:mt-16 md:pt-16">What You Have to Know about Bentet Foundation</p>
             </div>
@@ -171,20 +173,20 @@
             </div>
         </div>
         <a href="register.html"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register
+            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 border rounded focus:outline-none focus:shadow-outline">Register
             Now</a>
     </div>
 </section>
 
 
-<!-- Activities Section with Swiper Container -->
-<section id="activities" class="py-16">
+<!-- Activities Section with Swiper Container
+ <section id="activities" class="py-16">
     <div class="container mx-auto">
         <h2 class="text-3xl font-semibold text-center">Our Activities</h2>
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                 Slide 1
                 <div class="swiper-slide">
                     <div class="bg-white rounded-lg shadow-lg p-6">
                         <h3 class="text-xl font-semibold mb-2">Activity 1</h3>
@@ -195,7 +197,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+                <!-- Slide 2 
                 <div class="swiper-slide">
                     <div class="bg-white rounded-lg shadow-lg p-6">
                         <h3 class="text-xl font-semibold mb-2">Activity 2</h3>
@@ -206,14 +208,14 @@
                     </div>
                 </div>
 
-                <!-- Add more slides as needed -->
+                 Add more slides as needed 
             </div>
         </div>
 
-        <!-- Add Pagination -->
+        Add Pagination 
         <div class="swiper-pagination"></div>
     </div>
-</section>
+</section> -->
 
     <!-- Donate Section -->
     <section class="bg-cover bg-center bg-no-repeat h-full relative"
@@ -237,15 +239,17 @@
     <section id="newsletter" class="bg-gray-200 py-12 p-4 lg:p-0">
         <div class="container mx-auto">
             <h2 class="text-3xl font-semibold text-center mb-6">Subscribe to Our Newsletter</h2>
-            <form class="flex flex-col items-center">
+
+            <form class="flex flex-col items-center" id="newsletter-form" onsubmit="submitNewsletter(event)">
                 <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your Email"
                     class="w-full md:w-2/3 px-4 py-2 border rounded focus:outline-none focus:border-orange-500 border-blue-500 mb-4"
                     required>
                 <button type="submit"
-                    class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border rounded focus:outline-none focus:shadow-outline">
+                    class="bg-orange-500 hover-bg-blue-700 text-white font-bold py-2 px-4 border  rounded focus:outline-none focus:shadow-outline">
                     Subscribe
                 </button>
             </form>
+
         </div>
     </section>
 
@@ -265,13 +269,43 @@
     <script type="text/javascript">
         (function (d, m) {
             var kommunicateSettings =
-                { "appId": "15fa81ae6ccaf07fbc6290c9b746391b0", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+                { "appId": "24b129394b3d9c1415d39694a283c55a1", "popupWidget": true, "automaticChatOpenOnNavigation": true };
             var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
             s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
             var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
             window.kommunicate = m; m._globals = kommunicateSettings;
         })(document, window.kommunicate || {});
         /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+
+    <script>
+        function submitNewsletter(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                const email = document.getElementById("newsletter-email").value; // Get the email value
+
+                // Send the email to your server using an HTTP POST request
+                fetch('http://localhost:3000/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Handle the response from the server (e.g., show a success message)
+                        if (data.message === 'Subscription successful') {
+                            alert('Subscription successful'); // You can display a message here
+                        } else {
+                            alert('Failed to subscribe'); // Handle subscription failure
+                        }
+                    })
+                    .catch(error => {
+                        alert('An error occurred'); // Handle any network errors
+                    });
+            }
+
     </script>
 
 </body>

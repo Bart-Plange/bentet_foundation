@@ -133,3 +133,13 @@ html{
      text-align: center;
      cursor: pointer;
  }
+
+
+ /* registration and login messages */
+ .success{
+    color: green;
+ }
+
+ .error{
+    color: red;
+ }
