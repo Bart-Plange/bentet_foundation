@@ -151,39 +151,39 @@
     </script>
 
     <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const registrationForm = document.getElementById('registration-form');
-                const errorContainer = document.getElementById('error-container');
+        document.addEventListener('DOMContentLoaded', function () {
+            const registrationForm = document.getElementById('registration-form');
+            const errorContainer = document.getElementById('error-container');
 
-                registrationForm.addEventListener('submit', function (event) {
-                    event.preventDefault(); // Prevent the default form submission
+            registrationForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
 
-                    // Clear any previous error messages
-                    errorContainer.textContent = '';
+                // Clear any previous error messages
+                errorContainer.textContent = '';
 
-                    // Create an object to store the form data
-                    const formData = new FormData(registrationForm);
+                // Create an object to store the form data
+                const formData = new FormData(registrationForm);
 
-                    // Send a POST request to your backend
-                    axios.post('http://localhost:3000/api/message', formData)
-                        .then(response => {
-                            if (response.data && response.data.message) {
-                                console.log(response.data.message);
-                                // Display a success message to the user
-                            }
-                        })
-                        .catch(error => {
-                            if (error.response && error.response.data && error.response.data.error) {
-                                // Server-side error message
-                                errorContainer.textContent = error.response.data.error;
-                            } else {
-                                // Other errors, e.g., network issues
-                                errorContainer.textContent = 'An error occurred. Please try again later.';
-                            }
-                        });
-                });
+                // Send a POST request to your backend
+                axios.post('http://localhost:3000/api/message', formData)
+                    .then(response => {
+                        if (response.data && response.data.message) {
+                            console.log(response.data.message);
+                            // Display a success message to the user
+                            // You can add code here to display the success message on the page
+                        }
+                    })
+                    .catch(error => {
+                        if (error.response && error.response.data && error.response.data.error) {
+                            // Server-side error message
+                            errorContainer.textContent = error.response.data.error;
+                        } else {
+                            // Other errors, e.g., network issues
+                            errorContainer.textContent = 'An error occurred. Please try again later.';
+                        }
+                    });
             });
-
+        });
     </script>
 </body>
 </html>

@@ -101,8 +101,7 @@
         });
 
 
-        // Retrieve the donation amount and currency from the URL
-            const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(window.location.search);
             const amount = urlParams.get('amount');
             const currency = urlParams.get('currency');
 
@@ -110,7 +109,6 @@
             if (amount && currency) {
                 document.getElementById('donationAmount').textContent = `${amount} ${currency}`;
             }
-
         
     </script>
 </body>
