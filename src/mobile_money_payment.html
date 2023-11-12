@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
     <title>Mobile Money Payment</title>
-    
 </head>
 
 <body class="bg-gray-100">
@@ -16,11 +15,11 @@
     <main class="container mx-auto mt-6">
         <section class="bg-white p-6 rounded shadow">
             <h2 class="text-2xl font-semibold mb-4 text-center text-orange-500">Make a Mobile Money Payment</h2>
-        <div class="text-center font-semibold text-xl mb-4">
-            Donation Amount: <span id=donationAmount></span>
-        </div>
+            <div class="text-center font-semibold text-xl mb-4">
+                Donation Amount: <span id="donationAmount"></span>
+            </div>
 
-            <form class="space-y-4">
+            <form class="space-y-4" id="paymentForm">
                 <div>
                     <label for="network" class="block text-gray-600">Mobile Money Network</label>
                     <select id="network" name="network" required
@@ -34,18 +33,19 @@
                 <div>
                     <label for="phone-number" class="block text-gray-600">Phone Number</label>
                     <input type="tel" id="phone-number" name="phone-number" required
-                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500" placeholder="024 000 0000">
+                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500"
+                        placeholder="024 000 0000">
                 </div>
                 <div>
                     <label for="transaction-reference" class="block text-gray-600">Transaction Reference</label>
                     <input type="text" id="transaction-reference" name="transaction-reference" required
-                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500" placeholder="educatinoal support">
+                        class="w-full md:w-1/2 px-4 py-2 mx-auto border rounded focus:outline-none focus:border-orange-500"
+                        placeholder="Educational support">
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="submit-button"
-                        class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-orange-700">Submit
-                        Payment</button>
-
+                    <button type="button" id="submit-button"
+                        class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-orange-700"
+                        onclick="validateForm()">Submit Payment</button>
                 </div>
             </form>
         </section>
@@ -89,26 +89,27 @@
             }, 3000); // 3000 milliseconds (3 seconds) delay
         }
 
-        // Attach the function to the form submit button
-        const submitButton = document.querySelector('#submit-button');
-        submitButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default form submission
-            showLoadingOverlay();
-        });
-
+        // Validate the form fields
+        function validateForm() {
+            const form = document.getElementById('paymentForm');
+            if (form.checkValidity()) {
+                // If the form is valid, proceed with the payment
+                showLoadingOverlay();
+            } else {
+                // If the form is invalid, display an error message or take appropriate action
+                alert('Please fill in all the required fields.');
+            }
+        }
 
         // Retrieve the donation amount and currency from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const amount = urlParams.get('amount');
-            const currency = urlParams.get('currency');
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get('amount');
+        const currency = urlParams.get('currency');
 
-            console.log('Amount:', amount);
-            console.log('Currency:', currency);
-
-            // Display the donation amount and currency on the page
-            if (amount && currency) {
-                document.getElementById('donationAmount').textContent = `${amount} ${currency}`;
-            }
+        // Display the donation amount and currency on the page
+        if (amount && currency) {
+            document.getElementById('donationAmount').textContent = `${amount} ${currency}`;
+        }
     </script>
 </body>
 
